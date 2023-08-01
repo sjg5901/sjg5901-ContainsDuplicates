@@ -1,4 +1,5 @@
-
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class ContainsDuplicates {
     /**
@@ -8,6 +9,20 @@ public class ContainsDuplicates {
      * @return true if nums contains any duplicate values, false if it does not.
      */
     public boolean containsDuplicate(int[] nums){
+
+
+        // several ways to accomplish this. Using Set.add() most primitive
+        
+        Set<Integer> set = new HashSet<Integer>();
+
+        // Set interface doesn't allow duplicates
+        // set.add returns true if successfully added, false otherwise meaning duplicate present
+
+        for (int num : nums) {
+            if (!set.add(num)) { return true;}
+
+        }
+
         return false;
     }
 }
